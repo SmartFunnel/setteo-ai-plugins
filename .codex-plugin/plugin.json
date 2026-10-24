@@ -1,0 +1,25 @@
+{
+  "name": "setteo",
+  "version": "0.2.0",
+  "description": "Connects your agent to Setteo and teaches it to edit setter agents and personas without degrading them.",
+  "author": { "name": "Setteo", "url": "https://github.com/SmartFunnel" },
+  "homepage": "https://github.com/SmartFunnel/setteo-ai-plugins",
+  "repository": "https://github.com/SmartFunnel/setteo-ai-plugins",
+  "keywords": ["setteo", "whatsapp", "setter", "agents"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Setteo",
+    "shortDescription": "Edit your Setteo setter agents without degrading them",
+    "longDescription": "Reads and edits your Setteo agents, personas, scenarios, templates and leads through the Setteo MCP server, and applies the practices that keep agents from drifting through small patches.",
+    "developerName": "Setteo",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/SmartFunnel/setteo-ai-plugins",
+    "defaultPrompt": [
+      "My agent repeats itself, fix it.",
+      "Prepare this agent for the next edition of the campaign.",
+      "Make this persona warmer."
+    ]
+  }
+}

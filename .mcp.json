@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "setteo": {
+      "type": "http",
+      "url": "https://mcp.setteo.io"
+    }
+  }
+}

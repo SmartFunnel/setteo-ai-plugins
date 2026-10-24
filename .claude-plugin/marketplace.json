@@ -1,0 +1,14 @@
+{
+  "name": "setteo",
+  "description": "Setteo's plugin for AI coding agents: the Setteo MCP server and the skills to use it well.",
+  "owner": { "name": "Setteo", "url": "https://github.com/SmartFunnel" },
+  "plugins": [
+    {
+      "name": "setteo",
+      "source": "./",
+      "description": "Connects your agent to Setteo and teaches it to edit setter agents and personas without degrading them.",
+      "category": "productivity",
+      "tags": ["setteo", "whatsapp", "agents"]
+    }
+  ]
+}

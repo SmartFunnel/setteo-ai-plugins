@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: fix-from-client-feedback
+expected_outcome: |
+  Changes the persona's banned-opener rule to cover « Top » and « Super » rather than adding a step rule; removes or flags the GARDE-FOUS block duplicated in steps 0002–0004; writes no ticket number, date, client attribution or PRIORITAIRE/⚠ marker into the agent; shows the final text before writing.
+context:
+  scaffold_script: place-files.sh

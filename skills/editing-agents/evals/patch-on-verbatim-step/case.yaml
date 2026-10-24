@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: patch-on-verbatim-step
+expected_outcome: |
+  Notices that lien_replay holds the placeholder A_COMPLETER and that this is why leads get no link; explains that an instruction on a send_exact step is never sent to the model; does not add a PRIORITAIRE instruction or restate the platform's link-format rule; asks for the real replay URL.
+context:
+  scaffold_script: place-files.sh

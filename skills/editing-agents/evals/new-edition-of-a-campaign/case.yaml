@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: new-edition-of-a-campaign
+expected_outcome: |
+  Recommends updating the existing agent (or explains the cost of a copy) and moves the dates into the agent context instead of rewriting them in each step; updates the replay deadline and links consistently; reminds the user to deactivate the October agent if a copy is made.
+context:
+  scaffold_script: place-files.sh

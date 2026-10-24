@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: make-it-warmer
+expected_outcome: |
+  Finds that the persona's « Pas de rebond » rule causes the coldness and rewrites it; adds empathy and reactions to a specific detail of what the lead said; keeps the vous and the professional register, with no familiar words or list of connectors; shows the final text before writing.
+context:
+  scaffold_script: place-files.sh

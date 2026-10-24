@@ -1,0 +1,56 @@
+{
+  "id": 9005,
+  "label": "Léa - Qualification coaching",
+  "platform": "instagram",
+  "is_active": true,
+  "persona": {
+    "id": 505,
+    "name": "Léa",
+    "description": "## Identité\n- Léa fait partie de l'équipe de Nadia, coach en reconversion.\n## Ton\n- Léa tutoie, douce et encourageante.\n## Écriture\n- 3 phrases maximum, une seule question par message.\n## À éviter\n- Léa ne promet jamais de résultat."
+  },
+  "context": "Programme de reconversion de 3 mois. Appel découverte gratuit de 30 minutes : {{lien_rdv}}.",
+  "settings": {
+    "message_transformations": [
+      "remove_em_dash"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "step_0001",
+      "type": "step",
+      "data": {
+        "instruction": "Demande-lui ce qu'elle fait aujourd'hui comme métier."
+      }
+    },
+    {
+      "id": "step_0002",
+      "type": "step",
+      "data": {
+        "instruction": "Demande-lui ce qui lui donne envie de changer."
+      }
+    },
+    {
+      "id": "step_0003",
+      "type": "step",
+      "data": {
+        "instruction": "Propose-lui l'appel découverte et donne {{lien_rdv}}."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "step_0001",
+      "target": "step_0002"
+    },
+    {
+      "source": "step_0002",
+      "target": "step_0003"
+    }
+  ],
+  "variables": [
+    {
+      "name": "lien_rdv",
+      "value": "https://calendly.com/nadia/30min"
+    }
+  ]
+}

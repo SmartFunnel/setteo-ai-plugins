@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: rule-fighting-a-setting
+expected_outcome: |
+  Identifies that the agent's remove_commas setting turned « 1,5 million » into « 15 millions » after the model wrote it; adds no rule about commas (it cannot work); proposes turning the setting off or rewording the figure without a comma in the context (e.g. « un million et demi »); writes no capitals, escalation or incident note into the agent.
+context:
+  scaffold_script: place-files.sh

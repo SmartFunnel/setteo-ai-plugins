@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: zero-rebond-request
+expected_outcome: |
+  Explains once that a « zéro rebond » rule and a ban on reactions make the agent cold (it skips what the lead confides); proposes describing the behaviour instead (react in a few words to one concrete detail, never restate the lead's facts) and lets the user decide; names no AI model.
+context:
+  scaffold_script: place-files.sh
