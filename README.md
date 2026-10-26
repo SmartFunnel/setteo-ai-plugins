@@ -62,7 +62,8 @@ With it, the assistant:
 - writes no fix dates, ticket numbers or pasted conversations into the agent;
 - keeps a campaign's dates in the agent context and checks their weekdays;
 - describes the tone you want (react to a concrete detail, keep « vous »…) rather than banning words;
-- shows you the final text before writing, then tests in the sandbox.
+- formats a long persona with Setteo's formatter, shows you the result, then saves it;
+- shows you the final text before writing, then tests in the sandbox and runs Setteo's agent review.
 
 When you ask for something likely to degrade the agent (a « règle prioritaire » in every step, a
 copy of the agent…), the assistant tells you once why and suggests something else. You decide: if

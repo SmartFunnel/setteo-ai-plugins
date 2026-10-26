@@ -66,8 +66,8 @@ skipping step 2 is how agents end up with the same rule in four places.
 4. **Show the user the result before writing.** Show the final text of every rule you touch,
    and what you remove. Use `dry_run: true` on `update-agent-nodes` to show the exact change.
    The user approves the text the model will read, not your summary of it.
-5. **Check it.** Replay the case in the sandbox, then run `review-agent` and report what it
-   finds.
+5. **Check it.** Replay the case in the sandbox, then run `review-agent` on the agent and
+   report what it finds. Fix what your change caused; list the rest for the user.
 
 A fix that only adds text is a warning sign. A good fix often leaves the agent shorter.
 
@@ -120,10 +120,16 @@ The model cannot use any of these, and each one is read on every reply:
 
 - A persona says who writes and how. The offer, campaign facts and objection answers belong to
   the context. A persona named after a campaign ("… - Oct 2026") is a sign the offer is inside.
-- When a persona is long or tangled, suggest the persona page's « Mettre en forme » button
-  first: it sorts the text into sections, moves the offer out and removes the history. Then
-  review its result with the user before saving: it can drop rules and leave the examples
-  section empty.
+- When a persona is long, tangled or full of history, format it with `format-persona` before
+  rewriting anything by hand: it sorts the text into the six sections, removes the history and
+  repetition, and moves the offer out. Pass `agent_id` when the persona belongs to that one
+  agent, so the offer goes to its context. A long persona takes minutes: while it answers
+  `pending`, call it again with the same input.
+- Compare the result with the original before showing it: the formatter can drop a rule or
+  leave the examples section empty. Show the user the new persona (and the new context if the
+  offer moved) with what you would restore, then save it with `save-formatted-persona`, with
+  the same input. Fix what it dropped afterwards with `update-persona`. Never retype a long
+  persona through `update-persona` to save a formatting.
 - When a complaint comes from what the agent's settings do to the message (the settings can
   strip commas, colons or em dashes after the model has written it), the fix is the setting,
   not a rule. A rule asking the model to keep or avoid a character the platform then removes
@@ -158,6 +164,18 @@ behaviour around it, so write what the agent should do.
   for something already answered, doesn't answer the question or send the link, gets a fact
   wrong, or writes French that reads oddly. A new style rule rarely fixes any of these.
 
+## Review the agent
+
+`review-agent` gives the studio's analysis of an agent. Run it:
+
+- before working on an agent you don't know, to see what is already wrong;
+- after every change to an agent, its persona or its context, and on every agent that uses a
+  persona you changed;
+- after saving a formatted persona.
+
+Report its findings in plain words. Fix those your change caused, and suggest a fix for the
+others rather than applying it unasked.
+
 ## Before every write, check
 
 - Does this text already exist elsewhere in the agent? Then edit that, don't add.
@@ -168,6 +186,7 @@ behaviour around it, so write what the agent should do.
 - Is a tone rule written as the behaviour wanted, rather than a ban or a list of words?
 - Is the step instruction still a few sentences?
 - Has the user seen the final text?
+- After the write: will you run `review-agent`?
 
 See `references/anti-patterns.md` for real examples of each drift, taken from production
 agents, when you need to show the user why a change is worse than it looks.

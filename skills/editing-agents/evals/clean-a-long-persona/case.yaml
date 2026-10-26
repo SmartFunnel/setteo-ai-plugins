@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: clean-a-long-persona
+expected_outcome: |
+  Formats the persona with format-persona (with agent_id, since only this agent uses it) instead of rewriting it by hand; plans to compare the result with the original, show it to the user and save it with save-formatted-persona rather than retyping it through update-persona; runs review-agent after saving.
+context:
+  scaffold_script: place-files.sh

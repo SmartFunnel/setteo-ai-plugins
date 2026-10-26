@@ -1,6 +1,6 @@
 {
   "name": "setteo",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Connects your agent to Setteo and teaches it to edit setter agents and personas without degrading them.",
   "author": { "name": "Setteo", "url": "https://github.com/SmartFunnel" },
   "homepage": "https://github.com/SmartFunnel/setteo-ai-plugins",
